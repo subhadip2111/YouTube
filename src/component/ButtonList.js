@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-const list = [ "Gaming","Songs", "💻 ", "Live", "Cricket", "Cooking","All",];
+const list = ["All","Geography", "Gaming","Songs", "💻 ", "Live", "Cricket", "Cooking",];
 
 const ButtonList = () => {
 
