@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice'
 
 import { useSearchParams } from 'react-router-dom'
+import CommentsContainner from './CommentsContainner'
 
 const WatchPage = () => {
 
@@ -14,7 +15,8 @@ const dispatch= useDispatch()
 },[])
 
   return (
-   <div className="flex flex-col w-full">
+    <div className='flex-col'>
+        <div className="flex flex-col w-full">
       <div className="px-5 flex w-full">
         <div className="">
           <iframe
@@ -33,6 +35,11 @@ const dispatch= useDispatch()
       </div>
      
     </div>
+
+      
+      <CommentsContainner/>
+ </div>
+
   )
 }
 

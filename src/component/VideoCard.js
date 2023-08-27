@@ -25,4 +25,8 @@ export const AdVideoCard = ({ info }) => {
   );
 };
 
+
+
+
+
 export default VideoCard;
