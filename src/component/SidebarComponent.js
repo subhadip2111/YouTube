@@ -12,61 +12,58 @@ const SidebarComponent = () => {
   
   
     return (
-      <div className='p-5 shadow-lg w-48'>
-          
-          <ul>
-           <Link to="/">   <li>
-               Home 
-              </li></Link>
-              <li>Shorts</li>
-               <li>
-                 Sports 
-              </li>
-               <li>
-                 Gaming
-              </li> <li>
-                 Movies
-              </li>
+    <div className='p-5 shadow-lg w-48 bg-white'>
+      <ul className='space-y-3'>
+        <Link to='/'>
+          <li className='text-gray-700 hover:text-black transition'>
+            Home
+          </li>
+        </Link>
+        <li className='text-gray-700 hover:text-black transition'>
+          Shorts
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Sports
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Gaming
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Movies
+        </li>
+      </ul>
 
-          </ul>
-          
+      <h1 className='font-bold p-5 text-gray-900'>Subscriptions</h1>
+      <ul className='space-y-3'>
+        <li className='text-gray-700 hover:text-black transition'>
+          Music
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Sports
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Gaming
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Movies
+        </li>
+      </ul>
 
-
-
-
-
-          <h1 className='font-bold p-5'>Subcriptions</h1>
-          <ul>
-              <li>
-                 music 
-              </li>
-               <li>
-                 sports 
-              </li>
-               <li>
-                 gaming
-              </li> <li>
-                 movies
-              </li>
-
-          </ul>
-          
-          <h1 className='font-bold p-5'>watch later</h1>
-
-            <ul>
-              <li>
-                 music 
-              </li>
-               <li>
-                 sports 
-              </li>
-               <li>
-                 gaming
-              </li> <li>
-                 movies
-              </li>
-
-          </ul>
+      <h1 className='font-bold p-5 text-gray-900'>Watch Later</h1>
+      <ul className='space-y-3'>
+        <li className='text-gray-700 hover:text-black transition'>
+          Music
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Sports
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Gaming
+        </li>
+        <li className='text-gray-700 hover:text-black transition'>
+          Movies
+        </li>
+      </ul>
     </div>
   )
 }
