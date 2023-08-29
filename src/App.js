@@ -7,6 +7,7 @@ import store from "./utils/store";
 import Maincontainner from './component/Maincontainner'
 import WatchPage from './component/WatchPage';
 
+
 const appRouter = createBrowserRouter([{
   path: "/",
   element: <Body />,
@@ -32,17 +33,6 @@ function App() {
   <Head />
      <RouterProvider router={appRouter}/>
 
-        {/* 
-        header
-        body{
-        sidebar-menu item 
-        main containner
-        buttonslist
-        video containner
-        videocard
-        }
-        
-         */}
       </div>
 
     

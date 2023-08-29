@@ -1,13 +1,14 @@
 
-
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import { cacheResults } from "../utils/searchSlice";
 
+
 const Head = () => {
+
+
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -56,6 +57,8 @@ const Head = () => {
 
   return (
     <div className="grid grid-flow-col p-5 m-2 shadow-lg">
+      
+     
       <div className="flex col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
