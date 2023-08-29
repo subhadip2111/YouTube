@@ -22,7 +22,7 @@ export const LiveChat = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [dispatch]);
+  }, );
 
   return (
     <div className="flex flex-col h-[600px] bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg p-4 overflow-hidden shadow-lg">
