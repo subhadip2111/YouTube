@@ -9,52 +9,43 @@ import { cacheResults } from "../utils/searchSlice";
 const Head = () => {
 
 
-  const [searchQuery, setSearchQuery] = useState("");
+   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const searchCache = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
-  /**
-   *  searchCache = {
-   *     "iphone": ["iphone 11", "iphone 14"]
-   *  }
-   *  searchQuery = iphone
-   */
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
 
   useEffect(() => {
+    const getSearchSuggestions = async () => {
+      const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+      const json = await data.json();
+      setSuggestions(json[1]);
+
+      // update cache
+      dispatch(
+        cacheResults({
+          [searchQuery]: json[1],
+        })
+      );
+    };
+
     const timer = setTimeout(() => {
       if (searchCache[searchQuery]) {
         setSuggestions(searchCache[searchQuery]);
       } else {
-        getSearchSugsestions();
+        getSearchSuggestions();
       }
     }, 200);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuery]);
-
-  const getSearchSugsestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    //console.log(json[1]);
-    setSuggestions(json[1]);
-
-    // update cache
-    dispatch(
-      cacheResults({
-        [searchQuery]: json[1],
-      })
-    );
-  };
-
-  const toggleMenuHandler = () => {
-    dispatch(toggleMenu());
-  };
-
+  }, [searchQuery, searchCache, dispatch]);
   return (
     <div className="grid grid-flow-col p-5 m-2 shadow-lg">
       
@@ -112,3 +103,4 @@ const Head = () => {
 };
 
 export default Head;
+
